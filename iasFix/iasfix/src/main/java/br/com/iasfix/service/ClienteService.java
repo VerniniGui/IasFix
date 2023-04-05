@@ -12,7 +12,13 @@ public class ClienteService {
     @Autowired
     private ClienteRepository repository;
 
-    public ClienteEntitiy criarCliente(Cliente cliente){
-        return repository.save(cliente.toClienteEntity());
+    public Cliente newCliente(Cliente cliente){
+        ClienteEntitiy clienteEntitiy = repository.save(cliente.toClienteEntity());
+
+        return clienteEntitiy.toCliente();
+    }
+
+    public Cliente findClienteByName(String name){
+        return repository.findByName(name);
     }
 }

@@ -6,13 +6,13 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-@Entity
+@Entity(name = "cliente")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Builder
-public class ClienteEntitiy {
+public class ClienteEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigoCliente;
@@ -27,17 +27,8 @@ public class ClienteEntitiy {
     @Column(name ="data_nascimento", nullable = false)
     private LocalDate dataNascimento;
 
-    public ClienteEntitiy(Long codigoCliente, String nome, String cpf, String telefone, String celular, LocalDate dataNascimento) {
-        this.codigoCliente = codigoCliente;
-        this.nome = nome;
-        this.cpf = cpf;
-        this.telefone = telefone;
-        this.celular = celular;
-        this.dataNascimento = dataNascimento;
-    }
 
-    public ClienteEntitiy(Cliente cliente) {
-        this.codigoCliente = null;
+    public ClienteEntity(Cliente cliente) {
         this.nome = cliente.getNome();
         this.cpf = cliente.getCpf();
         this.telefone = cliente.getTelefone();

@@ -1,9 +1,8 @@
 package br.com.iasfix.model.domain;
 
-import br.com.iasfix.model.dto.ClienteDto;
-import br.com.iasfix.model.entities.ClienteEntitiy;
-
 import java.time.LocalDate;
+
+import br.com.iasfix.model.entities.ClienteEntity;
 
 public class Cliente {
     private String nome;
@@ -44,8 +43,8 @@ public class Cliente {
         return dataNascimento;
     }
 
-    public ClienteEntitiy toClienteEntity(){
-        return new ClienteEntitiy(null,
+    public ClienteEntity toClienteEntity(){
+        return new ClienteEntity(null,
                 this.nome,
                 this.cpf,
                 this.telefone,

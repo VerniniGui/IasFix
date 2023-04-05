@@ -1,12 +1,13 @@
 package br.com.iasfix.model.repository;
 
+import org.springframework.data.repository.CrudRepository;
+
 import br.com.iasfix.model.domain.Cliente;
-import br.com.iasfix.model.entities.ClienteEntitiy;
+import br.com.iasfix.model.entities.ClienteEntity;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import java.util.Optional;
 
-@Repository
-public interface ClienteRepository extends JpaRepository<ClienteEntitiy, Long> {
-    Cliente findByName(String nome);
+
+public interface ClienteRepository extends CrudRepository<ClienteEntity, Long> {
+    Optional findByNome(String nome);
 }

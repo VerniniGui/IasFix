@@ -1,10 +1,8 @@
 package br.com.iasfix.model.dto;
 
-import br.com.iasfix.model.domain.Cliente;
-import br.com.iasfix.model.entities.ClienteEntitiy;
-
-
 import java.time.LocalDate;
+
+import br.com.iasfix.model.entities.ClienteEntity;
 
 public class ClienteDto {
 
@@ -18,7 +16,7 @@ public class ClienteDto {
 
     private LocalDate dataNascimento;
 
-    public ClienteDto(ClienteEntitiy cliente) {
+    public ClienteDto(ClienteEntity cliente) {
         this.nome = cliente.getNome();
         this.cpf = cliente.getCpf();
         this.telefone = cliente.getTelefone();

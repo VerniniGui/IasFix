@@ -1,5 +1,6 @@
 package br.com.iasfix.model.dto;
 
+import br.com.iasfix.model.domain.Cliente;
 import br.com.iasfix.model.entities.ClienteEntitiy;
 
 
@@ -24,6 +25,7 @@ public class ClienteDto {
         this.celular = cliente.getCelular();
         this.dataNascimento = cliente.getDataNascimento();
     }
+
 
 
 }

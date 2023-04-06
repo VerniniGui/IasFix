@@ -2,8 +2,15 @@ package br.com.iasfix.model.dto;
 
 import java.time.LocalDate;
 
+import br.com.iasfix.model.domain.Cliente;
 import br.com.iasfix.model.entities.ClienteEntity;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class ClienteDto {
 
     private String nome;
@@ -24,6 +31,5 @@ public class ClienteDto {
         this.dataNascimento = cliente.getDataNascimento();
     }
 
-
-
 }
+
